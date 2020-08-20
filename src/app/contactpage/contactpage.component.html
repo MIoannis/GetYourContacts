@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="search-field">
+    <input type="text" class="search" placeholder="Поиск" [formControl]="this.searchForm">
+  </div>
+  <div class="for-grid">
+    <div class="contact" *ngFor="let item of filtredlist; index as i">
+      <fa-icon class="fa-trash" (click)="deleteContact(i)" [icon]="faTrash" size="3x"></fa-icon>
+      <form #f="ngForm">
+        <p>ФИО</p>
+        <input name="fullname" [(ngModel)]="item.fullname">
+        <p>Телефон</p>
+        <input name="phone" [(ngModel)]="item.phone">
+        <p>Должность</p>
+        <input name="post" [(ngModel)]="item.post">
+        <p>e-mail</p>
+        <input name="email" [(ngModel)]="item.email">
+        <button class="save" (click)="onSubmit(f, i)">Save</button>
+      </form>
+    </div>
+    <fa-icon class="fa-plus" (click)="addContact()" [icon]="faPlus" size="6x"></fa-icon>
+  </div>
+</div>

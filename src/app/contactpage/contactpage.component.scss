@@ -1,0 +1,98 @@
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.for-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 2fr));
+  align-items: center;
+}
+
+.search-field {
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  width: 94%;
+  height: 8vh;
+}
+
+.search {
+  width: 15vw;
+  height: 20px;
+  border-radius: 12px;
+}
+
+.contact {
+  width: 18vw;
+  height: 45vh;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 12px;
+  background: aliceblue;
+}
+
+.fa-plus {
+  color: white;
+}
+.fa-trash {
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 13vw;
+}
+
+form {
+  height: inherit;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  width: 16vw;
+  font-size: 1.2em;
+}
+
+input {
+  outline: 0;
+  height: 2vh;
+  width: 16vw;
+  font-size: 1.8vmin;
+}
+
+button {
+  padding: 0;
+  margin-bottom: 4px;
+  width: 5vw;
+  height: 2vh;
+  border-radius: 6px;
+  border-width: 1px;
+  outline: 0;
+  font-size: 1.1em;
+}
+
+.save {
+  margin-top: 30px;
+}
+
+button:hover {
+  background: #d4d4d4;
+}
+
+ul {
+  position: absolute;
+  top: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-left: 35px;
+  margin-bottom: 60px;
+}
+
+label {
+  font-size: 1.4em;
+}
