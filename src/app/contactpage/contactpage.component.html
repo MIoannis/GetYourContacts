@@ -1,22 +1,38 @@
 <div class="main">
   <div class="search-field">
-    <input type="text" class="search" placeholder="Поиск" [formControl]="this.searchForm">
+    <label>
+      <input type="text" class="search" placeholder="Поиск" [formControl]="this.searchForm">
+    </label>
   </div>
   <div class="for-grid">
-    <div class="contact" *ngFor="let item of filtredlist; index as i">
-      <fa-icon class="fa-trash" (click)="deleteContact(i)" [icon]="faTrash" size="3x"></fa-icon>
-      <form #f="ngForm">
+    <div class="contact" *ngFor="let item of filteredList; index as index">
+      <form #formValue="ngForm">
         <p>ФИО</p>
-        <input name="fullname" [(ngModel)]="item.fullname">
+        <label>
+          <input name="fullName" [(ngModel)]="item.fullName">
+        </label>
         <p>Телефон</p>
-        <input name="phone" [(ngModel)]="item.phone">
+        <label>
+          <input name="phone" [(ngModel)]="item.phone">
+        </label>
         <p>Должность</p>
-        <input name="post" [(ngModel)]="item.post">
+        <label>
+          <input name="post" [(ngModel)]="item.post">
+        </label>
         <p>e-mail</p>
-        <input name="email" [(ngModel)]="item.email">
-        <button class="save" (click)="onSubmit(f, i)">Save</button>
+        <label>
+          <input name="email" [(ngModel)]="item.email">
+        </label>
+        <button class="save" mat-raised-button color="primary"
+                (click)="onSubmit(formValue, index)">Сохранить</button>
+        <button class="fa-trash" mat-fab color="primary"
+                (click)="deleteContact(index)">
+          <fa-icon [icon]="faTrash" size="2x"></fa-icon>
+        </button>
       </form>
     </div>
-    <fa-icon class="fa-plus" (click)="addContact()" [icon]="faPlus" size="6x"></fa-icon>
+    <fa-icon class="fa-plus" size="6x"
+             (click)="addContact()"
+             [icon]="faPlus"></fa-icon>
   </div>
 </div>

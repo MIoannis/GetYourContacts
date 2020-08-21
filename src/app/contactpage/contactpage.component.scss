@@ -25,20 +25,25 @@
 
 .contact {
   width: 18vw;
-  height: 45vh;
+  height: 50vh;
   border-style: solid;
   border-color: gray;
   border-radius: 12px;
   background: aliceblue;
+  display: flex;
+  flex-direction: column;
 }
 
 .fa-plus {
   color: white;
 }
+
 .fa-trash {
-  position: absolute;
-  margin-top: 40vh;
-  margin-left: 13vw;
+  position: relative;
+  left: 70%;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
 }
 
 form {
@@ -72,7 +77,9 @@ button {
 }
 
 .save {
-  margin-top: 30px;
+  margin-top: 20px;
+  font-size: 1.5vmin;
+  height: 30px;
 }
 
 button:hover {

@@ -12,6 +12,7 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,16 +20,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthorizationComponent,
     ContactpageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    environment.production ? [] : AkitaNgDevtools,
-    FontAwesomeModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        environment.production ? [] : AkitaNgDevtools,
+        FontAwesomeModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

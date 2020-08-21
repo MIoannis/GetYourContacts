@@ -14,7 +14,7 @@ export class ContactpageComponent implements OnInit, AfterViewInit, OnDestroy {
   public searchForm = new FormControl();
   public filterSub$: Subscription;
   contactlist: Contact[] = [];
-  filtredlist: Contact[] = [];
+  filteredList: Contact[] = [];
   faPlus = faPlus;
   faTrash = faTrash;
 
@@ -23,7 +23,7 @@ export class ContactpageComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.filterSub$ = this.searchForm.valueChanges.pipe(
       startWith(''),
-      map((value: string) => this.filtredlist = this._filter(value))
+      map((value: string) => this.filteredList = this._filter(value))
     ).subscribe();
   }
 
@@ -32,24 +32,24 @@ export class ContactpageComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.contactlist.push({fullname: ''});
-    this.filtredlist = this.contactlist;
+    this.contactlist.push({fullName: ''});
+    this.filteredList = this.contactlist;
   }
 
   _filter(value: string): Contact[] {
     const filterValue = value.toLowerCase();
-    return this.contactlist.filter((item: Contact) => item.fullname.toLowerCase().includes(filterValue));
+    return this.contactlist.filter((item: Contact) => item.fullName.toLowerCase().includes(filterValue));
   }
 
   onSubmit(f: NgForm, i) {
-    this.contactlist[i] = {fullname: f.value.fullname, phone: f.value.phone, post: f.value.dol, email: f.value.email};
+    this.contactlist[i] = {fullName: f.value.fullName, phone: f.value.phone, post: f.value.dol, email: f.value.email};
   }
 
   addContact() {
-    this.filtredlist.push({fullname: ''});
+    this.filteredList.push({fullName: ''});
   }
 
   deleteContact(i) {
-    this.filtredlist.splice(i, 1);
+    this.filteredList.splice(i, 1);
   }
 }

@@ -1,13 +1,11 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <div class="main">
-    <div class="login">
-      <p>Логин:</p>
-      <input name="login" ngModel>
-    </div>
-    <div class="password">
-      <p>Пароль:</p>
-      <input name="password" ngModel>
-    </div>
+<div class="main">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <label>
+      <input name="login" ngModel placeholder="Логин">
+    </label>
+    <label>
+      <input name="password" ngModel placeholder="Пароль">
+    </label>
     <button routerLink="/contacts">Подтвердить</button>
-  </div>
-</form>
+  </form>
+</div>
