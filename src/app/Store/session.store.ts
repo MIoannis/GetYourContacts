@@ -18,5 +18,4 @@ export class SessionStore extends Store<SessionState> {
   constructor() {
     super(createInitialState());
   }
-
 }

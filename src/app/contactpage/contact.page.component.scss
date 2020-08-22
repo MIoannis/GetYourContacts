@@ -3,44 +3,44 @@
   width: 100%;
 }
 
-.for-grid {
+.grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20vw, 2fr));
   align-items: center;
 }
 
 .search-field {
-  justify-content: flex-end;
+  margin: 70px 0 70px 3%;
+  justify-content: space-between;
   align-items: center;
   display: flex;
-  width: 94%;
+  width: 93%;
   height: 8vh;
 }
 
 .search {
-  width: 15vw;
-  height: 20px;
-  border-radius: 12px;
+  background-color: white;
+  border-radius: 3px;
 }
 
 .contact {
   width: 18vw;
   height: 50vh;
-  border-style: solid;
-  border-color: gray;
   border-radius: 12px;
   background: aliceblue;
-  display: flex;
-  flex-direction: column;
+  margin-left: 15px;
+  margin-top: 20px;
 }
 
 .fa-plus {
   color: white;
+  height: 80px;
+  width: 80px;
 }
 
 .fa-trash {
   position: relative;
-  left: 70%;
+  left: 68%;
   width: 70px;
   height: 70px;
   border-radius: 100%;
@@ -49,8 +49,6 @@
 form {
   height: inherit;
   display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 p {
@@ -78,8 +76,10 @@ button {
 
 .save {
   margin-top: 20px;
-  font-size: 1.5vmin;
+  font-size: 1.8vmin;
   height: 30px;
+  width: 7vw;
+  margin-left: 10px;
 }
 
 button:hover {
@@ -101,5 +101,16 @@ li {
 }
 
 label {
-  font-size: 1.4em;
+  font-size: 2.3vmin;
+  padding-left: 10px;
+}
+
+label#first {
+  margin-top: 20px;
+}
+
+mat-form-field {
+  padding: 5px;
+  font-size: 1.2em;
+  width: 250px;
 }

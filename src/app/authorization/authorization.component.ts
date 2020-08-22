@@ -8,10 +8,15 @@ import { SessionService } from '../Store/session.service';
   styleUrls: ['./authorization.component.scss']
 })
 export class AuthorizationComponent {
+  hint = false;
 
   constructor(private sessionService: SessionService) { }
 
   onSubmit(f: NgForm) {
     this.sessionService.get(f.value.login, f.value.password);
+  }
+
+  showHint() {
+    this.hint = true;
   }
 }

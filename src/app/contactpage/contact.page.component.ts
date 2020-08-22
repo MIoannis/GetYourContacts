@@ -6,14 +6,17 @@ import { Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-contactpage',
-  templateUrl: './contactpage.component.html',
-  styleUrls: ['./contactpage.component.scss']
+  selector: 'app-contact.page',
+  templateUrl: './contact.page.component.html',
+  styleUrls: ['./contact.page.component.scss']
 })
-export class ContactpageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ContactPageComponent implements OnInit, AfterViewInit, OnDestroy {
   public searchForm = new FormControl();
   public filterSub$: Subscription;
-  contactlist: Contact[] = [];
+
+  value = '';
+
+  contactList: Contact[] = [];
   filteredList: Contact[] = [];
   faPlus = faPlus;
   faTrash = faTrash;
@@ -32,17 +35,17 @@ export class ContactpageComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.contactlist.push({fullName: ''});
-    this.filteredList = this.contactlist;
+    this.contactList.push({fullName: ''});
+    this.filteredList = this.contactList;
   }
 
   _filter(value: string): Contact[] {
     const filterValue = value.toLowerCase();
-    return this.contactlist.filter((item: Contact) => item.fullName.toLowerCase().includes(filterValue));
+    return this.contactList.filter((item: Contact) => item.fullName.toLowerCase().includes(filterValue));
   }
 
   onSubmit(f: NgForm, i) {
-    this.contactlist[i] = {fullName: f.value.fullName, phone: f.value.phone, post: f.value.dol, email: f.value.email};
+    this.contactList[i] = {fullName: f.value.fullName, phone: f.value.phone, post: f.value.dol, email: f.value.email};
   }
 
   addContact() {

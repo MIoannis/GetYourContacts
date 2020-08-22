@@ -1,11 +1,21 @@
 <div class="main">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <form #formValue="ngForm" (ngSubmit)="onSubmit(formValue)">
     <label>
-      <input name="login" ngModel placeholder="Логин">
+      <input name="login"
+             type="text"
+             placeholder="Логин"
+             ngModel>
     </label>
     <label>
-      <input name="password" ngModel placeholder="Пароль">
+      <input name="password"
+             type="password"
+             placeholder="Пароль"
+             ngModel>
     </label>
-    <button routerLink="/contacts">Подтвердить</button>
+    <button routerLink="/contacts"
+            mat-flat-button
+            color="primary"
+            (click)="showHint()">Подтвердить</button>
+    <p *ngIf="hint">Подсказка:<br>Логин: 'Elisa'<br> Пароль: '123'</p>
   </form>
 </div>

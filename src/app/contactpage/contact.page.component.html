@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="search-field">
+    <button class="fa-plus"
+            mat-fab color="primary"
+            (click)="addContact()">
+      <fa-icon size="3x" [icon]="faPlus"></fa-icon>
+    </button>
+    <div class="search">
+      <mat-form-field>
+        <mat-label>Поиск</mat-label>
+        <input matInput type="search"
+               [formControl]="searchForm"
+               [(ngModel)]="value">
+        <button mat-button *ngIf="searchForm" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="grid-layout">
+    <div class="contact"
+         *ngFor="let item of filteredList; index as index">
+      <form #formValue="ngForm">
+        <label id="first">ФИО
+          <input name="fullName" type="text" [(ngModel)]="item.fullName">
+        </label>
+        <label>Телефон
+          <input name="phone" type="tel" [(ngModel)]="item.phone">
+        </label>
+        <label>Должность
+          <input name="post" type="text" [(ngModel)]="item.post">
+        </label>
+        <label>e-mail
+          <input name="email" type="email" [(ngModel)]="item.email">
+        </label>
+        <button class="save" mat-raised-button color="primary"
+                (click)="onSubmit(formValue, index)">Сохранить</button>
+        <button class="fa-trash" mat-fab color="primary"
+                (click)="deleteContact(index)">
+          <fa-icon [icon]="faTrash" size="2x"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
