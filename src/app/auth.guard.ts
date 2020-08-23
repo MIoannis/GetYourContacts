@@ -17,6 +17,6 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> {
-    return this.sessionQuery.getStoreData$.pipe(first(value => value === true));
+    return this.sessionQuery.isLoggedIn$.pipe(first(value => value === true));
   }
 }
