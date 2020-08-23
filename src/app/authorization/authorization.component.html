@@ -1,5 +1,5 @@
 <div class="main">
-  <form #formValue="ngForm" (ngSubmit)="onSubmit(formValue)">
+  <form #formValue="ngForm">
     <label>
       <input name="login"
              type="text"
@@ -15,7 +15,7 @@
     <button routerLink="/contacts"
             mat-flat-button
             color="primary"
-            (click)="showHint()">Подтвердить</button>
+            (click)="onSubmit(formValue); showHint()">Подтвердить</button>
     <p *ngIf="hint">Подсказка:<br>Логин: 'Elisa'<br>e-mail: 'elisa@gmail.com'<br>Пароль: '123'</p>
   </form>
 </div>
