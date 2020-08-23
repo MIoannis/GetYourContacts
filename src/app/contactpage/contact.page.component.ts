@@ -1,9 +1,12 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, NgForm } from '@angular/forms';
-import { Contact } from '../contact.interface';
+
 import { Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+
+import { Contact } from '../contact.interface';
+
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contact.page',

@@ -6,6 +6,7 @@ import { take, tap } from 'rxjs/operators';
 interface Auth {
   accounts: {
     elisa: {
+      email: string,
       login: string,
       password: string
     }
@@ -21,8 +22,10 @@ export class SessionService {
   get(login, password) {
     this.http.get<Auth>('https://my-json-server.typicode.com/MIoannis/GetYourContacts/db')
       .pipe(take(1), tap(data => {
-        if (data.accounts.elisa.login === login && data.accounts.elisa.password === password) {
+        if (data.accounts.elisa.email === login || data.accounts.elisa.login === login && data.accounts.elisa.password === password) {
           this.sessionStore.update({isAuth: true});
+        } else {
+          alert('Неверное имя аккаунта или пароль.');
         }
       })).subscribe();
   }

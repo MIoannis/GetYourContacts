@@ -1,6 +1,6 @@
 <div class="main">
   <div class="search-field">
-    <button class="fa-plus"
+    <button class="plus"
             mat-fab color="primary"
             (click)="addContact()">
       <fa-icon size="3x" [icon]="faPlus"></fa-icon>
@@ -21,7 +21,7 @@
     <div class="contact"
          *ngFor="let item of filteredList; index as index">
       <form #formValue="ngForm">
-        <label id="first">ФИО
+        <label id="fio">ФИО
           <input name="fullName" type="text" [(ngModel)]="item.fullName">
         </label>
         <label>Телефон
@@ -35,7 +35,7 @@
         </label>
         <button class="save" mat-raised-button color="primary"
                 (click)="onSubmit(formValue, index)">Сохранить</button>
-        <button class="fa-trash" mat-fab color="primary"
+        <button class="trash" mat-fab color="primary"
                 (click)="deleteContact(index)">
           <fa-icon [icon]="faTrash" size="2x"></fa-icon>
         </button>

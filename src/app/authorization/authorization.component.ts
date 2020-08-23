@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SessionService } from '../Store/session.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-authorization',
@@ -12,8 +13,8 @@ export class AuthorizationComponent {
 
   constructor(private sessionService: SessionService) { }
 
-  onSubmit(f: NgForm) {
-    this.sessionService.get(f.value.login, f.value.password);
+  onSubmit(form: NgForm) {
+    this.sessionService.get(form.value.login, form.value.password);
   }
 
   showHint() {
