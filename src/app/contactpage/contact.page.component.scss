@@ -30,6 +30,12 @@
   background: aliceblue;
   margin-left: 15px;
   margin-top: 20px;
+  animation: fadein 300ms;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .plus {
