@@ -5,21 +5,25 @@
             (click)="addContact()">
       <fa-icon size="3x" [icon]="faPlus"></fa-icon>
     </button>
-    <div class="search">
+    <div>
       <mat-form-field>
         <mat-label>Поиск</mat-label>
         <input matInput type="search"
                [formControl]="searchForm"
                [(ngModel)]="value">
-        <button mat-button *ngIf="searchForm" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <button mat-button
+                *ngIf="searchForm"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="value=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
     </div>
   </div>
   <div class="grid-layout">
-    <div class="contact"
-         *ngFor="let item of filteredList; index as index">
+    <div *ngFor="let item of filteredList; index as index">
       <form #formValue="ngForm">
         <label id="fio">ФИО
           <input name="fullName" type="text" [(ngModel)]="item.fullName">
